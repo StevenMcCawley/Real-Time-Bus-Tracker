@@ -1,21 +1,21 @@
-<script>
-  async function run() {
-    // get bus data
-    const locations = await getBusLocations();
-    console.log(new Date());
-    console.log(locations);
-
-    // timer
-    setTimeout(run, 15000);
-  }
-
-  // Request bus data from MBTA
-  async function getBusLocations() {
-    const url = "https://api-v3.mbta.com/vehicles?filter[route]=1&include=trip";
-    const response = await fetch(url);
-    const json = await response.json();
-    return json.data;
-  }
-
-  run();
-</script>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Time Bus Tracker</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <!-- <script src="./index.js"></script> -->
+    <!-- MAPBOX -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="map"></div>
+    <script src="./index.js"></script>
+  </body>
+</html>
